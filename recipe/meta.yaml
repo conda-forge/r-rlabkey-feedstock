@@ -1,4 +1,4 @@
-{% set version = '2.2.4' %}
+{% set version = "2.2.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlabkey_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlabkey/Rlabkey_{{ version }}.tar.gz
-  sha256: 96843788277a2922405aa9a8267c6cebe8d166eef832d2380d997234e4c97800
+  sha256: a1bd52258dff26eed90ad14c0e56659ae67d454d279aa3151d1b5aedb641f7cb
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
