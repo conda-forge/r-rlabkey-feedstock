@@ -3,7 +3,7 @@ About r-rlabkey
 
 Home: https://CRAN.R-project.org/package=Rlabkey
 
-Package license: Apache License 2.0
+Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
