@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = '2.3.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlabkey_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlabkey/Rlabkey_{{ version }}.tar.gz
-  sha256: 7944f0f28225929706f92899d15b5d547b07a6eb5281d8c1bdf106651c47bb54
+  sha256: 0a28cade76e1f79c5be643770d809786738fee25a57c39c635a528d001dbb0ab
 
 build:
   merge_build_host: True  # [win]
@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -62,8 +62,8 @@ extra:
     - conda-forge/r
 
 # Package: Rlabkey
-# Version: 2.2.4
-# Date: 2018-11-02
+# Version: 2.3.2
+# Date: 2019-09-12
 # Title: Data Exchange Between R and 'LabKey' Server
 # Author: Peter Hussey
 # Maintainer: Cory Nathe <cnathe@labkey.com>
@@ -75,6 +75,6 @@ extra:
 # LinkingTo: Rcpp
 # Imports: Rcpp (>= 0.11.0)
 # NeedsCompilation: yes
-# Packaged: 2018-11-02 18:41:26 UTC; Cory
+# Packaged: 2019-09-16 21:43:01 UTC; Cory
 # Repository: CRAN
-# Date/Publication: 2018-11-05 19:20:14 UTC
+# Date/Publication: 2019-09-17 14:20:03 UTC
