@@ -5,7 +5,7 @@ Home: https://CRAN.R-project.org/package=Rlabkey
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: The 'LabKey' client library for R makes it easy for R users to load live data from a 'LabKey' Server, <http://www.labkey.com/>, into the R environment for analysis, provided users have permissions to read the data. It also enables R users to insert, update, and delete records stored on a 'LabKey' Server, provided they have appropriate permissions to do so.
 
