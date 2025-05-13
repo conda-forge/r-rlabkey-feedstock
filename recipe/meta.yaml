@@ -1,4 +1,4 @@
-{% set version = "3.4.2" %}
+{% set version = "3.4.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlabkey_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlabkey/Rlabkey_{{ version }}.tar.gz
-  sha256: 976323c105f890f570d7229aa4f428dd21d06abea9804b1af8b54da5c9259199
+  sha256: 282b38319e9b15a116d96d207822a8c51d6d0afcc61266fbe1067205e428b6e7
 
 build:
   number: 0
