@@ -1,4 +1,4 @@
-{% set version = "3.4.6" %}
+{% set version = "3.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlabkey_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlabkey/Rlabkey_{{ version }}.tar.gz
-  sha256: 7a88af36d6ba445cc402efea4b9e642b40012d5acabc481a54589579d0a720f9
+  sha256: 542799bb4f7e65f73395db42253d3d92c9779a0f7448665fb89553d1e25cbf2e
 
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -33,11 +37,13 @@ requirements:
   host:
     - r-base
     - r-rcpp >=0.11.0
+    - r-bit64
     - r-httr
     - r-jsonlite
   run:
     - r-base
     - r-rcpp >=0.11.0
+    - r-bit64
     - r-httr
     - r-jsonlite
 
@@ -52,7 +58,8 @@ about:
   summary: The 'LabKey' client library for R makes it easy for R users to load live data from a 'LabKey' Server, <http://www.labkey.com/>, into the R environment for analysis, provided users have permissions to read the data. It also enables R users to insert, update, and delete records stored on a 'LabKey' Server, 
     provided they have appropriate permissions to do so.
   license_family: APACHE
-  license_file: LICENSE
+  license_file:
+    - LICENSE
 
 extra:
   recipe-maintainers:
